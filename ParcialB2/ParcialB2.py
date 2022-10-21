@@ -32,7 +32,7 @@ for i in range(len(Title1)):
 
 
 client = boto3.client("s3","us-east-1")
-client.put_object(Body=s, Bucket='parcial2primer', Key ='headlines/final/ElTiempo/year='+ x + '/month=' + x2 + '/day=' + x3 + 'procesado1.csv')
+client.put_object(Body=s, Bucket='parcial2primer', Key ='headlines/final/ElTiempo/year='+ x + '/month=' + x2 + '/day=' + x3 + '/procesado1.csv')
 
 with open("/tmp/archivo2.txtt") as fp:
     soup2 = BeautifulSoup(fp, 'html.parser')
@@ -45,4 +45,4 @@ p = ""
 for i in range(len(Title2)):
     s = p + Title2[i].contents[0] + "\n"
 
-client.put_object(Body=p, Bucket='parcial2primer', Key ='headlines/final/Espectador/year='+ x + '/month=' + x2 + '/day=' + x3 + 'procesado2.csv')
+client.put_object(Body=p, Bucket='parcial2primer', Key ='headlines/final/Espectador/year='+ x + '/month=' + x2 + '/day=' + x3 + '/procesado2.csv')
